@@ -27,13 +27,33 @@ type Board = ref object
   len: Natural
   score: Natural
   rows: seq[seq[Natural]]
+  top_border: string
+  mid_border: string
+  btm_border: string
+
+func newBoard(len: Natural): Board =
+  Board(
+    len: len,
+    rows: newSeqWith(len, newSeq[Natural](len)),
+    top_border: "┌" & newSeqWith(len, "────").join("┬") & "┐\n",
+    mid_border: "├" & newSeqWith(len, "────").join("┼") & "┤\n",
+    btm_border: "└" & newSeqWith(len, "────").join("┴") & "┘",
+  )
 
 func `$`(b: Board): string =
-  result = "┌────┬────┬────┬────┐\n"
+  result.add b.top_border
   result.add b.rows.mapIt(
     "│" & it.mapIt(center(if it > 0: $it else: "", 4)).join("│") & "│\n"
-  ).join("├────┼────┼────┼────┤\n")
-  result.add "└────┴────┴────┴────┘"
+  ).join(b.mid_border)
+  result.add b.btm_border
+
+proc display(b: Board, erase = true) =
+  if erase:
+    for i in 0..b.len*2+1:
+      eraseLine()
+      cursorUp()
+  echo &"score: {b.score}"
+  echo b
 
 func is_win(b: Board, target: Natural): bool {.inline.} =
   b.rows.mapIt(it.max()).max() >= target
@@ -57,7 +77,7 @@ proc rotate(b: Board, count: int) =
     let old_board = b.rows
     for y in 0..<b.len:
       for x in 0..<b.len:
-        b.rows[3-x][y] = old_board[y][x]
+        b.rows[b.len-1-x][y] = old_board[y][x]
 
 proc left_shift(b: Board) =
   let old_board = b.rows
@@ -90,12 +110,9 @@ proc main(len: int = 4, target: int = 2048): int =
     while true:
       echo "Starting a new game"
       echo "press q to quit, r to restart"
-      let b = Board(
-        len: len,
-        rows: newSeqWith(len, newSeq[Natural](len))
-      )
+      let b = newBoard(len)
       b.spawnRandom()
-      echo b
+      b.display(false)
       while true:
         let op = getKey()
         case op
@@ -110,10 +127,7 @@ proc main(len: int = 4, target: int = 2048): int =
               echo "You Win!!"
               break
             b.spawnRandom()
-        for i in 0..b.len*2:
-          eraseLine()
-          cursorUp()
-        echo b
+        b.display()
       echo &"score: {b.score}"
 
 when isMainModule:

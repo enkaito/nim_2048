@@ -12,4 +12,4 @@ bin           = @["nim_2048"]
 # Dependencies
 
 requires "nim >= 2.2.0"
-requires "cligen"
+requires "cligen >= 1.7.8"
