@@ -18,8 +18,8 @@ To get started with the 2048 CLI game, follow these simple steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/2048-nim-cli.git
-   cd 2048-nim-cli
+   git clone https://github.com/enkaito/nim_2048.git
+   cd nim_2048
    ```
 
 2. **Install Nim**: If you haven't already, install Nim by following the instructions on the [Nim website](https://nim-lang.org/install.html). 🛠️
