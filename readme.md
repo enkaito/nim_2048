@@ -11,6 +11,25 @@ Welcome to the **2048 Game CLI Clone** repository! This project is a terminal-ba
 - **Score Tracking**: Keep track of your score as you combine tiles! 📈
 - **Customizable Board**: Change the board size and target number for a unique challenge! 🔧
 
+## 📥 Installation
+
+To get started with the 2048 CLI game, follow these simple steps:
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/2048-nim-cli.git
+   cd 2048-nim-cli
+   ```
+
+2. **Install Nim**: If you haven't already, install Nim by following the instructions on the [Nim website](https://nim-lang.org/install.html). 🛠️
+
+3. **Run the Game**:
+
+   ```bash
+   nimble run
+   ```
+
 ## 🎮 How to Play
 
 - Use the **↑ (Up Arrow)** key to move tiles up.
@@ -42,3 +61,7 @@ You can combine these options:
 ```bash
 nim_2048 -l 6 -t 8192  # 6x6 board with a target of 8192
 ```
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more details. 📄 Join us in this fun and challenging game! 🎉 Whether you're a seasoned player or new to 2048, we hope you enjoy this terminal version as much as we enjoyed creating it. Happy gaming! 🌈
