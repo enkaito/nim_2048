@@ -102,7 +102,7 @@ proc left_shift(b: Board) =
 proc shift(b: Board, dir: Operation) =
   b.rotate(int(dir))
   b.left_shift()
-  b.rotate(4 - int(dir))
+  b.rotate((4 - int(dir)) mod 4)
 
 proc main(len: int = 4, target: int = 2048): int =
   randomize()
