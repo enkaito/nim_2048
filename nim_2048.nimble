@@ -2,9 +2,10 @@
 
 version       = "0.1.0"
 author        = "enkaito"
-description   = "A new awesome nimble package"
+description   = "2048 game cli clone in Nim"
 license       = "MIT"
 srcDir        = "src"
+binDir        = "out"
 bin           = @["nim_2048"]
 
 
