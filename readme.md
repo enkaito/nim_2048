@@ -2,6 +2,13 @@
 
 Welcome to the **2048 Game CLI Clone** repository! This project is a terminal-based implementation of the popular sliding block puzzle game, 2048, developed using the Nim programming language. Get ready to slide, combine, and reach that magical tile! ✨
 
+## 📜 Attribution
+
+This game is a clone of the original 2048 game created by Gabriele Cirulli. The original version can be found at:
+<https://github.com/gabrielecirulli/2048>
+
+The original 2048 is distributed under the MIT license.
+
 ## 🌟 Features
 
 - **Classic Gameplay**: Experience the original 2048 mechanics! 🧩
