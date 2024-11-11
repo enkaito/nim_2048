@@ -51,10 +51,10 @@ To get started with the 2048 CLI game, follow these simple steps:
 
 Customize your game experience with these options:
 
-- **-l** or **--len**: Change the size of the board (default is 4x4).
+- **-s** or **--size**: Change the size of the board (default is 4x4).
 
   ```bash
-  nim_2048 -l 5  # Creates a 5x5 board
+  nim_2048 -s 5  # Creates a 5x5 board
   ```
 
 - **-t** or **--target**: Change the target number (default is 2048).
