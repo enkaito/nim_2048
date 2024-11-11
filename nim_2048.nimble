@@ -2,7 +2,7 @@
 
 version       = "0.1.0"
 author        = "enkaito"
-description   = "2048 game cli clone in Nim"
+description   = "2048 game clone runs in your terminal, written in Nim"
 license       = "MIT"
 srcDir        = "src"
 binDir        = "out"
